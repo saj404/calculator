@@ -1,0 +1,86 @@
+/*
+Color Scheme:
+Text: #DEE1DD
+Background: #6D9197
+Calculator Body: #28363D
+Number Button: #2F575D
+Operator: #658B6F
+Equal: #C4CDC1 / #99AEAD
+https://web.archive.org/web/20130414215234/http://www.lavishbootstrap.com/?image_url=http://design-seeds.com/palettes/12/SpringTones505.jpg
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #DEE1DD;
+    font-size: 1.15em;
+}
+body {
+    background-color: #6D9197;
+}
+
+#calculator {
+    background-color: #28363D;
+    width: 320px;
+    height: 390px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 5px 6px 20px 5px hsla(0, 0%, 20%, .5);
+}
+
+#screen {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: right;
+    background-color: #99AEAD;
+}
+#top-display {
+    font-size: .5em;
+}
+#top-display span, #main-display span {
+    color: #28363D;
+}
+
+#main-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px 15px;
+}
+
+.button-special, .button-operator, .button-number {
+    border: 1px solid black;
+    border-radius: 8px;
+    text-align: center;
+    padding: 5px 0px;
+}
+.click {
+    transform: scale(.95);
+}
+.button-special {
+    background-color: #b75459;
+}
+.button-operator {
+    background-color: #658B6F;
+}
+.button-number {
+    background-color: #2F575D;
+}
+#add {
+    grid-column: 4 / 5;
+    grid-row: 4 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
