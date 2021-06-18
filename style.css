@@ -22,7 +22,7 @@ body {
 #calculator {
     background-color: #28363D;
     width: 320px;
-    height: 390px;
+    height: 435px;
     padding: 15px;
     border-radius: 8px;
     border: 1px solid black;
@@ -56,17 +56,42 @@ body {
 #main-body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px 15px;
+    grid-gap: 15px 15px;
 }
 
 .button-special, .button-operator, .button-number {
-    border: 1px solid black;
+    position: relative;
     border-radius: 8px;
     text-align: center;
     padding: 5px 0px;
+    z-index: 1;
+    user-select: none;
 }
-.click {
-    transform: scale(.95);
+.button-special:active, .button-operator:active, .button-number:active {
+    transform: translateY(3px);
+}
+.button-cntnr {
+    position: relative;
+    
+}
+.duplicate {
+    position: absolute;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    padding: 5px 0px;
+    user-select: none;
+    transform: translateY(-46px);
+    box-shadow: 1px 1px 3px rgba(32, 32, 32, 0.7);
+}
+.duplicate-special {
+    background-color: #723235;
+}
+.duplicate-operator {
+    background-color: #425c49;
+}
+.duplicate-number {
+    background-color: #142629;
 }
 .button-special {
     background-color: #b75459;
@@ -77,9 +102,13 @@ body {
 .button-number {
     background-color: #2F575D;
 }
-#add {
+#add-cntnr {
     grid-column: 4 / 5;
     grid-row: 4 / 6;
+}
+#add {
+    box-sizing: border-box;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
