@@ -77,6 +77,8 @@ function operate(button) {
                         selectedOprtr = button.dataset.value;
                         topDisplay.textContent = `${firstOperand} ${selectedOprtr}`;
                         mainDisplay.textContent = '0';
+                    } else if(result == "N") {
+                        clear();
                     } else if(result != '') {
                         result = '';
                         selectedOprtr = button.dataset.value;
@@ -110,14 +112,19 @@ function operate(button) {
                     }
                     break;
                 case "=":
-                    if(firstOperand != '' && secondOperand != '') {
+                    if(firstOperand !== '' && secondOperand !== '') {
                         secondOperand = parseFloat(secondOperand);
                         topDisplay.textContent = `${firstOperand} ${selectedOprtr} ${secondOperand}`;
-                        result = compute();
+                        if(selectedOprtr == "÷" && secondOperand === 0) {
+                            result = "N";
+                            mainDisplay.textContent = "Nice try kid.";
+                        } else {
+                            result = compute();
+                            mainDisplay.textContent = result;
+                        }
                         firstOperand = '';
                         secondOperand = '';
                         selectedOprtr = '';
-                        mainDisplay.textContent = result;
                     }
                     break;
             }
@@ -129,6 +136,9 @@ function checkInput(button) { //checks for initial zero input
     let valueResult;
     if(button.dataset.value == '0') {
         if(mainDisplay.textContent == '0') {
+            if(firstOperand != '') {
+                secondOperand = 0;
+            }
             valueResult = false;
             return valueResult;
         } else {
