@@ -69,7 +69,7 @@ function operate(button) {
                 case "+":
                     checkOperand();
                     if(secondOperand != '') {
-                        secondOperand = +secondOperand;
+                        secondOperand = parseFloat(secondOperand);
                         result = compute();
                         firstOperand = result;
                         result = '';
@@ -111,7 +111,7 @@ function operate(button) {
                     break;
                 case "=":
                     if(firstOperand != '' && secondOperand != '') {
-                        secondOperand = +secondOperand;
+                        secondOperand = parseFloat(secondOperand);
                         topDisplay.textContent = `${firstOperand} ${selectedOprtr} ${secondOperand}`;
                         result = compute();
                         firstOperand = '';
@@ -160,7 +160,7 @@ function clear() {
 
 function checkOperand() {
     if(firstOperand == '') {
-        firstOperand = +mainDisplay.textContent;
+        firstOperand = parseFloat(mainDisplay.textContent);
     }
 }
 
@@ -181,17 +181,17 @@ function compute() {
 }
 
 function modulo() {
-    return (+firstOperand % +secondOperand);
+    return (parseFloat(firstOperand) % parseFloat(secondOperand));
 }
 function divide() {
-    return (+firstOperand / +secondOperand);
+    return (parseFloat(firstOperand) / parseFloat(secondOperand));
 }
 function multiply() {
-    return (+firstOperand * +secondOperand);
+    return (parseFloat(firstOperand) * parseFloat(secondOperand));
 }
 function subtract() {
-    return (+firstOperand - +secondOperand);
+    return (parseFloat(firstOperand) - parseFloat(secondOperand));
 }
 function add() {
-    return (+firstOperand + +secondOperand);
+    return (parseFloat(firstOperand) + parseFloat(secondOperand));
 }
