@@ -4,3 +4,5 @@
 This is a project made to complete the lesson at: https://www.theodinproject.com/
 
 A calculator that can perform addition, subtraction, multiplication, division, and modulo.
+
+Will add keyboard support soon!

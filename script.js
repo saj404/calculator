@@ -23,7 +23,6 @@ let secondOperand = '';
 let selectedOprtr = '';
 let result = '';
 let decimalLimit = /\./;
-let trailZeroCheck = /[1-9](?=[^1-9]+$)/g;
 
 buttons.forEach( (button) => {
     button.addEventListener('click', () => {
