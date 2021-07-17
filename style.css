@@ -37,24 +37,6 @@ body {
     bottom: 0;
     box-shadow: 5px 6px 20px 5px hsla(0, 0%, 20%, .5);
 }
-/*
-#screen {
-    border: 1px solid black;
-    height: 60px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    padding: 5px 10px;
-    text-align: right;
-    background-color: #99AEAD;
-}
-#top-display {
-    font-size: .5em;
-}
-#top-display span, #main-display span {
-    color: #28363D;
-    vertical-align: center;
-}
-*/
 #screen {
     border: 1px solid black;
     height: 64px;
